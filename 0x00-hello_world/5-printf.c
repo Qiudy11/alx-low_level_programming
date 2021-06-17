@@ -1,6 +1,7 @@
 #include<stdio.h>
 /**
- * using printf
+ *printf - prints "with proper grammar, but the outcome is a piece of art,"
+ * main - void
  */
 int main(void)
 {
