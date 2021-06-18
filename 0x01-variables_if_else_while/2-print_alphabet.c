@@ -1,19 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
  * main - entry point
  *
- * Description: Prints the alphabets in lowercase, followed by a new line.
- *
+ * Description: Print the lowercase alphabet
  * Return: 0
  */
-
 int main(void)
 {
-  int x;
-for (x = 'a'; x <= 'z'; x++)
-    {
-putchar(x);
+int x;
+
+for (x = 0; x < 26; ++x)
+putchar('a' + x);
+
 putchar('\n');
-    }
- return (0);
+
+return (0);
 }
