@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
 *main - main entry
-*Desription: program that prints all single digit numbers of base 10 starting from 0
+*Desription: program that prints all numbers from 0-9
 *Return: Always (Success)
 */
 int main(void)
