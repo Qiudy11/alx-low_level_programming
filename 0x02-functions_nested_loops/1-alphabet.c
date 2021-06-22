@@ -1,7 +1,7 @@
 #include "holberton.h"
 /** 
  *description : alphabets
- *Return : Always success
+ *Return : Nothing
  */
 int main(void)
 {
@@ -11,5 +11,4 @@ for(n = 'a'; n <= 'z'; n++)
 _putchar(n);
 }
 _putchar('\n');
- return(0);
 }
