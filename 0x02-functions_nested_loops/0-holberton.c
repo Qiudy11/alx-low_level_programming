@@ -1,8 +1,8 @@
 #include "holberton.h"
-/*
- *Main - main entry
+/**
+ *main - main entry
  *Description - Print "Holberton"
- *Return - Always success
+ *return - Always success
 */
 int main(void)
 {
