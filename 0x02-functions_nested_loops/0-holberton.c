@@ -2,7 +2,8 @@
 /**
  *main - main entry
  *Description - Print "Holberton"
- *return - Always success
+ *
+ *return: 0
 */
 int main(void)
 {
