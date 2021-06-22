@@ -3,13 +3,13 @@
  *description : alphabets
  *Return : Always success
  */
-int main()
+void print_alphabet(void)
 {
-int j = 0;
+char j = 0;
 for(j = 0; j < 26; ++j)
-putchar('a' + j);
+_putchar('a' + j);
 {
-putchar('\n');
+_putchar('\n');
 }
 return (0);
 }
