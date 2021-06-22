@@ -1,10 +1,8 @@
 #include "holberton.h"
 /**
- *int main(void) - main entry
- *Description - Print "Holberton"
- *
- *return: 0
-*/
+ * main - prints the string "Holberton" from a character array.
+ * Return: 0 on success.
+ */
 int main(void)
 {
 char c[] = "Holberton";
