@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *main - main entry
+ *int main(void) - main entry
  *Description - Print "Holberton"
  *
  *return: 0
