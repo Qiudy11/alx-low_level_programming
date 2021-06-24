@@ -1,8 +1,6 @@
 #include <stdio.h>
 /**
 * main - causes an infinite loop
-*"Infinite loop incoming :(\n"
-*"Infinite loop avoided! \\o/\n"
 * Return: 0
 */
 int main(void)
