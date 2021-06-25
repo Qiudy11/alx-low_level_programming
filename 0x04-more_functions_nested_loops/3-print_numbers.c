@@ -1,13 +1,13 @@
 #include "holberton.h"
 /**
-* print_numbers - Print the numbers since 0 up to 9
+* print_numbers -  checks for checks for a digit (0 through 9).
 *
-* Return: The numbers since 0 up to 9
+* Return: Always 0.
 */
 void print_numbers(void)
 {
 int a;
-for (a = '0'; a <= '9'; a++)
+for (a = 48; a < 58; a++)
 {
 _putchar(a);
 }
