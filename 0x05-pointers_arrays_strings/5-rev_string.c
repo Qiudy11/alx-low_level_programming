@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-*rev_string : Reverse a string
+*rev_string -  Reverse a string
 *@s : pointer of char type
 *
 *
