@@ -1,8 +1,7 @@
 #include "holberton.h"
 /**
 *_puts_recursion - function that prints a string
-*
-*
+*@s : the string to print
 *
 *Return : Always 0
 */
