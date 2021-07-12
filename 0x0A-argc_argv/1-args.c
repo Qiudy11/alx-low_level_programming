@@ -3,7 +3,7 @@
 /**
 * main - Entry point
 * @argc: incoming argument
-* @argc: incoming argument
+* @argv: incoming argument
 *
 * Return: Always 0.
 */
