@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <holberton.h>
+#include<stdio.h>
+#include<stdlib.h>
 /**
 * main - Entry point
 * @argc: incoming argument
