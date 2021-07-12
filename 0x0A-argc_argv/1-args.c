@@ -1,5 +1,5 @@
 #include "stdio.h"
-#include "stdlib.h"
+#include "holberton.h"
 /**
 * main - Prints the number of arguments passed into main
 * @argc: Number of command line arguments
