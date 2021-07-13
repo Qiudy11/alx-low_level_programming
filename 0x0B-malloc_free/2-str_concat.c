@@ -19,7 +19,7 @@ for (i = 0; s1[i] != '\0'; i++)
 ;
 for (j = 0; s2[j] != '\0'; j++)
 ;
-newStr = (char*)malloc((i + j) * sizeof(char));
+newStr = (char *)malloc((i + j) * sizeof(char));
 if (newStr == NULL)
 return (NULL);
 for (k = 0; s1[k] != '\0'; k++)
