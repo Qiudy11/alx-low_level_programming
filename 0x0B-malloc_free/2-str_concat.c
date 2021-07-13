@@ -9,21 +9,22 @@
 */
 char *str_concat(char *s1, char *s2)
 {
-char *pstr;
-unsigned int len1 = 0, len2 = 0, i, j;
-if (s1 == 0)
+int i, j, k;
+char *newStr = NULL;
+if (s1 == NULL)
 s1 = "";
-if (s2 == 0)
+if (s2 == NULL)
 s2 = "";
-while (s1[len1] != 0)
-len1++;
-while (s2[len2] != 0)
-len2++;
-len2++;
-pstr = malloc(sizeof(char) * (len1 + len2));
-for (i = 0; i < len1; i++)
-pstr[i] = s1[i];
-for (j = 0; j < len2; i++, j++)
-pstr[i] = s2[j];
-return (pstr);
+for (i = 0; s1[i] != '\0'; i++)
+;
+for (j = 0; s2[j] != '\0'; j++)
+;
+newStr = (char*)malloc((i + j) * sizeof(char));
+if (newStr == NULL)
+return (NULL);
+for (k = 0; s1[k] != '\0'; k++)
+newStr[k] = s1[k];
+for (k = 0; s2[k] != '\0'; k++)
+newStr[k + i] = s2[k];
+return (newStr);
 }
