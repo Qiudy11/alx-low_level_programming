@@ -19,7 +19,7 @@ if (s2 == NULL)
 s2 = "";
 for (index = 0; s1[index]; index++)
 len++;
-concat = malloc(sizeof(char) *(len + 1));
+concat = malloc(sizeof(char) * (len + 1));
 if (concat == NULL)
 return (NULL);
 len = 0;
