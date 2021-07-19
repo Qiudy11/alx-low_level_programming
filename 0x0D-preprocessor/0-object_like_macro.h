@@ -3,4 +3,4 @@
 
 #define SIZE 1024
 
-#end if
+#endif /* _object_like_macro_h_ */
