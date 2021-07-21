@@ -1,26 +1,57 @@
 #include "3-calc.h"
 /**
-* get_op_func - print the name of this function
-* @s: has the length of the arguments
+* op_add - print the name of this function
+* @a: has the length of the arguments
+* @b: has the arguments
 * Return: 0 to indicate a good working of the program
 */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-op_t ops[] = {
-{"+", op_add},
-{"-", op_sub},
-{"*", op_mul},
-{"/", op_div},
-{"%", op_mod},
-{NULL, NULL}
-};
-int i;
-i = 0;
-while (i < 5)
-{
-if (strcmp(s, ops[i].op) == 0)
-return (ops[i].f);
-i++;
+return (a + b);
 }
-return (NULL);
+/**
+* op_sub - print the name of this function
+* @a: has the length of the arguments
+* @b: has the arguments
+* Return: 0 to indicate a good working of the program
+*/
+int op_sub(int a, int b)
+{
+return (a - b);
+}
+/**
+* op_mul - print the name of this function
+* @a: has the length of the arguments
+* @b: has the arguments
+* Return: 0 to indicate a good working of the program
+*/
+int op_mul(int a, int b)
+{
+return (a * b);
+}
+/**
+* op_div - print the name of this function
+* @a: has the length of the arguments
+* @b: has the arguments
+* Return: 0 to indicate a good working of the program
+*/
+int op_div(int a, int b)
+{
+if (b != 0)
+return (a / b);
+printf("Error\n");
+exit(100);
+}
+/**
+* op_mod - print the name of this function
+* @a: has the length of the arguments
+* @b: has the arguments
+* Return: 0 to indicate a good working of the program
+*/
+int op_mod(int a, int b)
+{
+if (b != 0)
+return (a % b);
+printf("Error\n");
+exit(100);
 }
