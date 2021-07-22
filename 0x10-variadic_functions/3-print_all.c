@@ -1,78 +1,98 @@
 #include "variadic_functions.h"
-#include<stdio.h>
+
+void ch(va_list a);
+void in(va_list a);
+void fl(va_list a);
+void cha(va_list a);
+
 /**
-* test_char - print char.
-* @pr: argument pointer.
-*/
-void test_char(va_list pr)
-{
-printf("%c", va_arg(pr, int));
-}
-/**
-* test_integer - print char.
-* @pr: argument pointer.
-*/
-void test_integer(va_list pr)
-{
-printf("%i", va_arg(pr, int));
-}
-/**
-* test_float - print char.
-* @pr: argument pointer.
-*/
-void test_float(va_list pr)
-{
-printf("%f", va_arg(pr, double));
-}
-/**
-* test_string - print char.
-* @pr: argument pointer.
-*/
-void test_string(va_list pr)
-{
-char *s = va_arg(pr, char*);
-if (!s)
-{
-printf("(nil)");
-return;
-}
-printf("%s", s);
-}
-/**
-* print_all -  prints anything.
-* @format: format type of arg.
-*
-* Return: Nothing.
-*/
+  * print_all - fills memory with a constant byte
+  * @format: is string
+  * Return: nothing
+  */
+
 void print_all(const char * const format, ...)
 {
-op_t ops[] = {
-{"c", test_char},
-{"i", test_integer},
-{"f", test_float},
-{"s", test_string},
-{NULL, NULL}
-};
-va_list pr;
-int i = 0;
-int j = 0;
-char *sep = "";
-va_start(pr, format);
-while (format && format[i])
-{
-j = 0;
-while (ops[j].op)
-{
-if (format[i] == *ops[j].op)
-{
-printf("%s", sep);
-ops[j].f(pr);
-sep = ", ";
+	va_list gett;
+	unsigned int i, j;
+	char *separ = "";
+	op_t o[] = {
+		{"c", ch},
+		{"i", in},
+		{"f", fl},
+		{"s", cha},
+		{NULL, NULL}
+	};
+
+	va_start(gett, format);
+	i = 0;
+	while (format != NULL && format[i] != '\0')
+	{
+		j = 0;
+		while (o[j].op != NULL)
+		{
+			if (format[i] == o[j].op[0])
+			{
+				printf("%s", separ);
+				o[j].f(gett);
+				separ = ", ";
+				break;
+			}
+			j++;
+		}
+		i++;
+	}
+	va_end(gett);
+	printf("\n");
 }
-j++;
+
+/**
+  * ch - fills memory with a constant byte
+  * @a: is string
+  * Return: nothing
+  */
+
+void ch(va_list a)
+{
+	printf("%c", va_arg(a, int));
 }
-i++;
+
+/**
+  * in - fills memory with a constant byte
+  * @a: is string
+  * Return: nothing
+  */
+
+void in(va_list a)
+{
+	printf("%d", va_arg(a, int));
 }
-printf("\n");
-va_end(pr);
+
+/**
+  * fl - fills memory with a constant byte
+  * @a: is string
+  * Return: nothing
+  */
+
+void fl(va_list a)
+{
+	printf("%f", va_arg(a, double));
+}
+
+/**
+  * cha - fills memory with a constant byte
+  * @a: is string
+  * Return: nothing
+  */
+
+void cha(va_list a)
+{
+	char *aa = va_arg(a, char *);
+
+	if (aa == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", aa);
 }
