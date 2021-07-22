@@ -1,98 +1,50 @@
+#include <stdarg.h>
+#include <stdio.h>
 #include "variadic_functions.h"
-
-void ch(va_list a);
-void in(va_list a);
-void fl(va_list a);
-void cha(va_list a);
-
 /**
-  * print_all - fills memory with a constant byte
-  * @format: is string
-  * Return: nothing
-  */
-
+ * print_all - Entry Point
+ * c = char, i = int, f = float, s = char * (if null print (nil))
+ * @format: list of arg types
+ * Return: 0
+ */
 void print_all(const char * const format, ...)
 {
-	va_list gett;
-	unsigned int i, j;
-	char *separ = "";
-	op_t o[] = {
-		{"c", ch},
-		{"i", in},
-		{"f", fl},
-		{"s", cha},
-		{NULL, NULL}
-	};
+	va_list valist;
+	int n = 0, i = 0;
+	char *sep = ", ";
+	char *str;
 
-	va_start(gett, format);
-	i = 0;
-	while (format != NULL && format[i] != '\0')
-	{
-		j = 0;
-		while (o[j].op != NULL)
-		{
-			if (format[i] == o[j].op[0])
-			{
-				printf("%s", separ);
-				o[j].f(gett);
-				separ = ", ";
-				break;
-			}
-			j++;
-		}
+	va_start(valist, format);
+
+	while (format && format[i])
 		i++;
-	}
-	va_end(gett);
-	printf("\n");
-}
 
-/**
-  * ch - fills memory with a constant byte
-  * @a: is string
-  * Return: nothing
-  */
-
-void ch(va_list a)
-{
-	printf("%c", va_arg(a, int));
-}
-
-/**
-  * in - fills memory with a constant byte
-  * @a: is string
-  * Return: nothing
-  */
-
-void in(va_list a)
-{
-	printf("%d", va_arg(a, int));
-}
-
-/**
-  * fl - fills memory with a constant byte
-  * @a: is string
-  * Return: nothing
-  */
-
-void fl(va_list a)
-{
-	printf("%f", va_arg(a, double));
-}
-
-/**
-  * cha - fills memory with a constant byte
-  * @a: is string
-  * Return: nothing
-  */
-
-void cha(va_list a)
-{
-	char *aa = va_arg(a, char *);
-
-	if (aa == NULL)
+	while (format && format[n])
 	{
-		printf("(nil)");
-		return;
+		if (n  == (i - 1))
+		{
+			sep = "";
+		}
+		switch (format[n])
+		{
+		case 'c':
+			printf("%c%s", va_arg(valist, int), sep);
+			break;
+		case 'i':
+			printf("%d%s", va_arg(valist, int), sep);
+			break;
+		case 'f':
+			printf("%f%s", va_arg(valist, double), sep);
+			break;
+		case 's':
+			str = va_arg(valist, char *);
+			if (str == NULL)
+				str = "(nil)";
+			printf("%s%s", str, sep);
+			break;
+		}
+		n++;
 	}
-	printf("%s", aa);
+	printf("\n");
+	va_end(valist);
 }
