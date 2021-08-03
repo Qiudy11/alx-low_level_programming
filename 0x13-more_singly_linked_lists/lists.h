@@ -34,4 +34,3 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 
 #endif /* LISTS_H */
-© 2021 GitHub, Inc.
