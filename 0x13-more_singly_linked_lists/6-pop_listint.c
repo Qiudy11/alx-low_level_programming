@@ -16,6 +16,6 @@ return (0);
 temp = *head;
 ret = (*head)->n;
 *head = (*head)->next;
-free (temp);
-return(ret);
+free(temp);
+return (ret);
 }
