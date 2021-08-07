@@ -14,5 +14,5 @@ int main(void)
     for(i = 0; i<4; i++)
       printf(" %d ", rand());
    
-    return 0;
+  return 0;
 }
