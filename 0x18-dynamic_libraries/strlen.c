@@ -11,4 +11,3 @@ for (len = 0; *s != '\0'; len++)
 s++;
 return (len);
 }
-© 2021 GitHub, Inc.
