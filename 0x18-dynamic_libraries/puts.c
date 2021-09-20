@@ -1,10 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * Description: main - Prints out a string to stdout.
- * Return: 0 if success.
- */
-int main(void)
+*_puts - Prints a string, followed by a new line to stdout
+*@str : Pointer of type char
+*
+*
+*
+*Return : always 0.
+*/
+void _puts(char *str)
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+while (*str != '\0')
+{
+_putchar(*str);
+str++;
+}
+_putchar('\n');
 }
